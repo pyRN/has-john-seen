@@ -50,7 +50,6 @@ const updateMovies = asyncHandler(async (request, response) => {
 //@access Private
 const deleteMovies = asyncHandler(async (request, response) => {
   const movie = await Movie.findById(request.params.id);
-  console.log("Movie: ", movie);
   if (!movie) {
     response.status(400);
     throw new Error("Movie not found");
