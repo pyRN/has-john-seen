@@ -4,13 +4,14 @@ const {
   getMovies,
   postMovies,
   updateMovies,
-  deleteMovies,
 } = require("../controllers/movieController");
 
+const { protect } = require("../middleware/authMiddleware");
+
 //CRUD routes
-router.post("/", postMovies);
+router.post("/", protect, postMovies);
 router.get("/", getMovies);
-router.put("/:id", updateMovies);
-router.delete("/:id", deleteMovies);
+router.put("/:id", protect, updateMovies);
+// router.delete("/:id", protect, deleteMovies);
 
 module.exports = router;
