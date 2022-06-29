@@ -11,13 +11,15 @@ import ForgotContainer from "./Components/LoginPage/ForgotContainer";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingContainer />} />
-        <Route path="/movie" element={<MovieContainer />} />
-        <Route path="/login" element={<LoginContainer />} />
-        <Route path="/register" element={<RegisterContainer />} />
-        <Route path="/forgot" element={<ForgotContainer />} />
-      </Routes>
+      <main className="flex-column center container">
+        <Routes>
+          <Route path="/" element={<LandingContainer />} />
+          <Route path="/movie" element={<MovieContainer />} />
+          <Route path="/login" element={<LoginContainer />} />
+          <Route path="/register" element={<RegisterContainer />} />
+          <Route path="/forgot" element={<ForgotContainer />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 };
