@@ -63,7 +63,7 @@ body {
 
 .landing-card{
   background: center no-repeat url('./Multimedia/Images/Theatre_1.jpg');
-  filter: grayscale(0.8);
+  /* filter: grayscale(0.8); */
   min-height: 70%;
   justify-content: flex-start;
 
@@ -97,26 +97,10 @@ body {
   border: var(--red);
 }
 
-img {
-  width: 350px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
 form {
-  background-color: var(--green);
+ width: 300px; 
 }
 
 @media only screen and (max-width: 750px) {
-  .main-heading {
-    font-size: 20pt;
-    width: 100%;
-  }
-
-  .card {
-    border-radius: 10px;
-    background-color: var(--purple);
-    padding: 5px;
-  }
+  
 }
