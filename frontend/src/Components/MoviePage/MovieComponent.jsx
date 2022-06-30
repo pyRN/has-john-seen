@@ -1,8 +1,12 @@
-const MovieContainer = () => {
+import { useLocation } from "react-router-dom";
+
+const MovieComponent = () => {
+  const { state } = useLocation();
+
   return (
     <div className="flex-column movie-card">
       <div className="flex-row">
-        <h1>Movie Title Goes Here</h1>
+        <h1 className>{state.title}</h1>
       </div>
       <div className="flex-row">
         <div className="flex-column center">
@@ -10,13 +14,8 @@ const MovieContainer = () => {
         </div>
         <div className="flex-column center">
           <h2>Synopsis</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-            ipsa facilis quis dignissimos nulla beatae. Optio asperiores
-            possimus perspiciatis? Numquam illum magnam voluptatem dicta
-            obcaecati enim dolore veniam eius cum?
-          </p>
-          <h3>Average Rating</h3>
+          <p>{state.overview}</p>
+          <h3>{state.vote_average}</h3>
         </div>
       </div>
       <div className="flex-row">
@@ -42,4 +41,4 @@ const MovieContainer = () => {
   );
 };
 
-export default MovieContainer;
+export default MovieComponent;
