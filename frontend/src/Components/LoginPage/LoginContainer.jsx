@@ -8,32 +8,37 @@ const LoginContainer = () => {
     event.preventDefault();
 
     if (oEmail.current.value.length && oPassword.current.value.length) {
-      console.log("Log IN user");
+      console.log("Log In user");
     } else {
       fnSetWarningMessage("Email and Password Required");
     }
   };
   return (
     <div className="flex-column center container">
-      <div className="flex-column landing-card w-80">
-        <div className="hero-content">
-          <h1 className="hero-text">Log In</h1>
+      <div className="flex-column card center">
+        <div className="card-content">
+          <h1 className="card-text">Log In</h1>
+          {sWarningMessage ? (
+            <h2 className="warning-message">{sWarningMessage}</h2>
+          ) : null}
           <form onSubmit={fnOnSubmit}>
             <div className="flex-column input-container">
-              <label>Email:</label>
+              <label className="w-100">Email:</label>
               <input
                 placeholder="Email"
                 type="email"
                 ref={oEmail}
+                className="w-100"
                 required
               ></input>
             </div>
             <div className="flex-column input-container">
-              <label>Password:</label>
+              <label className="w-100">Password:</label>
               <input
                 placeholder="Password"
                 type="password"
                 ref={oPassword}
+                className="w-100"
                 required
               ></input>
             </div>
