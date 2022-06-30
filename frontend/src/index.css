@@ -145,10 +145,100 @@ input {
   height: 200px;
 }
 
-.movie-link-card{
-  background-color: red;
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--black);
+}
+
+.navbar-form {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.navbar-input {
+  width: 300px;
+  height: 45px;
+}
+
+.navbar-btn:hover {
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.movie-link-card {
   cursor: pointer;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  width: 350px;
+  height: 500px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.movie-link-card:hover {
+  border: 1px solid var(--white);
+  transform: scale(0.95);
+}
+
+.movie-link-card:hover .movie-link-card-img {
+  transform: scale(1.2);
+}
+
+.movie-link-card-text {
+  color: var(--white);
+  text-align: center;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.movie-link-card-title {
+  color: var(--red);
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 15pt;
+}
+
+.movie-card {
+  width: 80%;
+  min-width: 350px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.movie-card-title {
+  color: var(--red);
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 35pt;
+}
+
+thead {
+  color: var(--red);
+}
+
+tbody {
+  color: var(--white);
+  text-align: center;
+}
+
+.table-column-1 {
+  width: 20%;
+}
+.table-column-2 {
+  width: 5%;
+}
+.table-column-3 {
+  width: 70%;
 }
 
 @media only screen and (max-width: 750px) {
+  .movie-card {
+    width: 350px;
+  }
 }
