@@ -15,6 +15,19 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Password Required"],
     },
+    aFriends: [
+      {
+        _id: mongoose.Types.ObjectId,
+        sUsername: String,
+      },
+    ],
+    aRecommendations: [
+      {
+        _id: mongoose.Types.ObjectId,
+        sUsername: String,
+        _nMovieId: mongoose.Types.ObjectId,
+      },
+    ],
   },
   {
     timestamps: true,
