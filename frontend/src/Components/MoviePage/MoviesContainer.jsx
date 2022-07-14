@@ -1,19 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-//Components
-import Navbar from "./Navbar.jsx";
-
 //Dev Only
 import oMultipleMovies from "./multipleMoviesExample.json";
 import oSingleMovie from "./singleMovieExample.json";
 
 const MoviesContainer = () => {
   const fnUseNavigate = useNavigate();
-  const [aSearchedMovie, fnSetSearchMovie] = useState(null);
   return (
     <div className="flex-column center">
-      <Navbar fnSetSearchMovie={fnSetSearchMovie} />
       <div className="flex-row center flex-wrap">
         {oMultipleMovies.results.map((oMovie) => {
           return (
