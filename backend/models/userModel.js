@@ -23,6 +23,8 @@ const userSchema = mongoose.Schema(
     aRecommendations: [
       {
         nMovieId: String,
+        sMovieTitle: String,
+        sPosterPath: String,
         sUsername: String,
         sComment: String,
       },
@@ -30,6 +32,8 @@ const userSchema = mongoose.Schema(
     aMoviesWatched: [
       {
         nMovieId: String,
+        sMovieTitle: String,
+        sPosterPath: String,
         nRating: String,
         sComment: String,
       },
@@ -37,8 +41,8 @@ const userSchema = mongoose.Schema(
     aWatchList: [
       {
         nMovieId: String,
-        nRating: String,
-        sComment: String,
+        sMovieTitle: String,
+        sPosterPath: String,
       },
     ],
   },
