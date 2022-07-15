@@ -10,7 +10,7 @@
   filter: grayscale(50%);
   border-radius: 10px;
   margin: 10px;
-  animation: flicker 1s linear infinite;
+  animation: flicker 1s ease alternate infinite;
 }
 
 .landing-heading {
@@ -27,7 +27,8 @@
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   width: 350px;
-  animation: flicker 1s ease alternate infinite;
+  opacity: 1;
+  animation: show 2s;
 }
 
 .hidden-container {
@@ -63,6 +64,15 @@
   }
   100% {
     transform: rotate(50%);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
