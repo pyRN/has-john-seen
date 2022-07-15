@@ -17,6 +17,9 @@
   color: var(--red);
   text-align: center;
 }
+.btn-icon {
+  margin-right: 10px;
+}
 
 .content {
   position: absolute;
