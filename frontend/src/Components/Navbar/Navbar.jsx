@@ -34,17 +34,14 @@ const Navbar = () => {
       </div>
       <form className="flex-row center" onSubmit={fnOnSearch}>
         <div className="input-wrapper">
-          <IoMdSearch className="search-icon" />
           <input
             className="search-input"
             type="text"
             placeholder="Search"
             ref={oSearchInput}
           ></input>
+          <IoMdSearch className="search-icon" onClick={fnOnSearch} />
         </div>
-        <button className="btn search-btn" onSubmit={fnOnSearch} type="submit">
-          Search
-        </button>
       </form>
 
       <div className="hamburger-menu close" ref={oHamburgerMenu}>
