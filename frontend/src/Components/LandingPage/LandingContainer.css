@@ -1,0 +1,77 @@
+.centered-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.theatre-img {
+  max-width: 100%;
+  width: 100%;
+  filter: grayscale(50%);
+  border-radius: 10px;
+  margin: 10px;
+  animation: flicker 1s linear infinite;
+}
+
+.landing-heading {
+  color: var(--red);
+  text-align: center;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 350px;
+  animation: flicker 1s ease alternate infinite;
+}
+
+.hidden-container {
+  display: none;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  background-color: var(--dark-gray);
+  width: 100%;
+  margin: 5%;
+}
+
+@keyframes flicker {
+  0% {
+    filter: grayscale(10%);
+  }
+  2% {
+    filter: grayscale(90%);
+  }
+  9% {
+    filter: grayscale(0%);
+  }
+  23% {
+    filter: grayscale(100%);
+  }
+  60% {
+    filter: grayscale(50%);
+  }
+  71% {
+    filter: grayscale(70%);
+  }
+  85% {
+    filter: grayscale(2%);
+  }
+  100% {
+    transform: rotate(50%);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .hidden-container {
+    display: flex;
+  }
+
+  .content {
+    display: none;
+  }
+}
