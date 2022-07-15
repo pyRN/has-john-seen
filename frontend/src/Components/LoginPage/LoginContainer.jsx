@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { login, reset } from "../../features/auth/authSlice";
 import "./LoginContainer.css";
 
@@ -17,12 +18,20 @@ const LoginContainer = () => {
   );
   useEffect(() => {
     if (bIsError) {
-      toast.error(sMessage);
-    } else if (bIsSuccess || oUserData) {
+      toast.error(sMessage, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
+    } else if (bIsSuccess) {
+      toast.success("Successfully Logged In", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
+      fnNavigate("/dashboard");
+      fnDispatch(reset());
+    } else if (oUserData) {
       fnNavigate("/dashboard");
     }
-
-    fnDispatch(reset());
   }, [
     oUserData,
     bIsSuccess,
@@ -43,7 +52,10 @@ const LoginContainer = () => {
         })
       );
     } else {
-      toast.error("All fields are required for login");
+      toast.error("All fields are required for login", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
     }
   };
 

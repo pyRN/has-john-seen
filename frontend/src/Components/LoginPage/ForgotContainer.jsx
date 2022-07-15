@@ -16,7 +16,10 @@ const ForgotContainer = () => {
   );
   useEffect(() => {
     if (bIsError) {
-      toast.error(sMessage);
+      toast.error(sMessage, {
+        position: toast.POSITION.BOTTOM_CENTER,
+        autoClose: 3000,
+      });
     } else if (bIsSuccess || oUserData) {
       fnNavigate("/dashboard");
     }
