@@ -23,9 +23,9 @@ const userSchema = mongoose.Schema(
     ],
     aRecommendations: [
       {
-        _id: mongoose.Types.ObjectId,
+        nMovieId: String,
         sUsername: String,
-        _nMovieId: mongoose.Types.ObjectId,
+        sComment: String,
       },
     ],
     aMoviesWatched: [

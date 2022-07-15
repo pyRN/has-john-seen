@@ -57,6 +57,9 @@ const loginUser = asyncHandler(async (request, response) => {
       _id: user.id,
       sUsername: user.sUsername,
       sEmail: user.sEmail,
+      aFriends: user.aFriends,
+      aRecommendations: user.aRecommendations,
+      aMoviesWatched: user.aMoviesWatched,
       token: generateJwt(user._id),
     });
   } else {
