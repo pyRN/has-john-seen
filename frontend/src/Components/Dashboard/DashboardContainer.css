@@ -1,0 +1,19 @@
+.profile-container {
+  border: 1px solid green;
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+}
+.avatar-img {
+  fill: green;
+  width: 150px;
+  height: auto;
+}
+
+.dashboard-text {
+  color: green;
+}
+
+.movie {
+  margin: 5px;
+}
