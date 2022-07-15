@@ -65,6 +65,10 @@
   color: var(--black);
 }
 
+.search-btn:hover {
+  color: var(--red);
+}
+
 .mobile-menu {
   z-index: 3;
   opacity: 0;

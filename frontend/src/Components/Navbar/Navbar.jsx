@@ -69,15 +69,27 @@ const Navbar = () => {
         <div className="mobile-menu">
           <div className="flex-column mobile-nav-links close">
             {oUserData ? (
-              <NavLink to="/dashboard" className="mobile-nav-link">
+              <NavLink
+                to="/dashboard"
+                className="mobile-nav-link"
+                onClick={() => oHamburgerMenu.current.classList.toggle("open")}
+              >
                 Dashboard
               </NavLink>
             ) : null}
 
-            <NavLink to="/movies" className="mobile-nav-link">
+            <NavLink
+              to="/movies"
+              className="mobile-nav-link"
+              onClick={() => oHamburgerMenu.current.classList.toggle("open")}
+            >
               Movies
             </NavLink>
-            <NavLink to="login" className="mobile-nav-link">
+            <NavLink
+              to="login"
+              className="mobile-nav-link"
+              onClick={() => oHamburgerMenu.current.classList.toggle("open")}
+            >
               Log In
             </NavLink>
           </div>
