@@ -60,8 +60,8 @@ const ForgotContainer = () => {
           onSubmit={fnOnSubmit}
           className="flex-column center form-card-form"
         >
-          <div className="fflex-column form-card-input-container">
-            <label className="w-100">Email:</label>
+          <div className="flex-column form-card-input-container">
+            <label>Email:</label>
             <input
               placeholder="Email"
               type="email"

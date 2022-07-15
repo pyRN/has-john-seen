@@ -20,6 +20,7 @@
   font-size: max(1vh, 3rem);
   color: var(--red);
   margin-bottom: 0;
+  text-align: center;
 }
 
 .form-card-input-container {
