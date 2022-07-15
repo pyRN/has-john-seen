@@ -28,6 +28,20 @@ const userSchema = mongoose.Schema(
         _nMovieId: mongoose.Types.ObjectId,
       },
     ],
+    aMoviesWatched: [
+      {
+        _id: mongoose.Types.ObjectId,
+        nRating: Number,
+        sComment: String,
+      },
+    ],
+    aWatchList: [
+      {
+        _id: mongoose.Types.ObjectId,
+        nRating: Number,
+        sComment: String,
+      },
+    ],
   },
   {
     timestamps: true,
