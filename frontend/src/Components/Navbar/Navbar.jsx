@@ -1,36 +1,52 @@
-import { useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { logout, reset } from "../../features/auth/authSlice";
 import "./Navbar.css";
 
 //Icons
 import { IoIosCloseCircle, IoIosMenu, IoMdSearch } from "react-icons/io";
 
 const Navbar = () => {
-  const { oUserData } = useSelector((state) => state.auth);
   const oHamburgerMenu = useRef(null);
   const oSearchInput = useRef(null);
+  const fnNavigate = useNavigate();
+  const fnDispatch = useDispatch();
+  const { oUserData } = useSelector((state) => state.auth);
 
   const fnOnSearch = (e) => {
     e.preventDefault();
     console.log("Search For: ", oSearchInput.current.value);
   };
 
+  const fnOnLogOut = (e) => {
+    e.preventDefault();
+    fnDispatch(logout());
+    fnDispatch(reset());
+    oHamburgerMenu.current.classList.toggle("open");
+    fnNavigate("/login");
+  };
+
   return (
     <nav className="flex-row navbar">
       <div className="flex-row nav-links">
+        <NavLink to="/movies" className="flex-row center nav-link">
+          Movies
+        </NavLink>
         {oUserData ? (
-          <NavLink to="/dashboard" className="nav-link">
+          <NavLink to="dashboard" className="nav-link">
             Dashboard
           </NavLink>
         ) : null}
-
-        <NavLink to="/movies" className="nav-link">
-          Movies
-        </NavLink>
-        <NavLink to="login" className="nav-link">
-          Log In
-        </NavLink>
+        {oUserData ? (
+          <button className="nav-link log-out-btn" onClick={fnOnLogOut}>
+            Log Out
+          </button>
+        ) : (
+          <NavLink to="login" className="nav-link">
+            Log In
+          </NavLink>
+        )}
       </div>
       <form className="flex-row center" onSubmit={fnOnSearch}>
         <div className="input-wrapper">
@@ -65,16 +81,6 @@ const Navbar = () => {
         />
         <div className="mobile-menu">
           <div className="flex-column mobile-nav-links close">
-            {oUserData ? (
-              <NavLink
-                to="/dashboard"
-                className="mobile-nav-link"
-                onClick={() => oHamburgerMenu.current.classList.toggle("open")}
-              >
-                Dashboard
-              </NavLink>
-            ) : null}
-
             <NavLink
               to="/movies"
               className="mobile-nav-link"
@@ -82,13 +88,31 @@ const Navbar = () => {
             >
               Movies
             </NavLink>
-            <NavLink
-              to="login"
-              className="mobile-nav-link"
-              onClick={() => oHamburgerMenu.current.classList.toggle("open")}
-            >
-              Log In
-            </NavLink>
+            {oUserData ? (
+              <NavLink
+                to="dashboard"
+                className="mobile-nav-link"
+                onClick={() => oHamburgerMenu.current.classList.toggle("open")}
+              >
+                Dashboard
+              </NavLink>
+            ) : null}
+            {oUserData ? (
+              <button
+                className="mobile-nav-link log-out-btn"
+                onClick={fnOnLogOut}
+              >
+                Log Out
+              </button>
+            ) : (
+              <NavLink
+                to="login"
+                className="mobile-nav-link"
+                onClick={() => oHamburgerMenu.current.classList.toggle("open")}
+              >
+                Log In
+              </NavLink>
+            )}
           </div>
         </div>
       </div>
