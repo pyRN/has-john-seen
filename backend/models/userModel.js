@@ -17,7 +17,6 @@ const userSchema = mongoose.Schema(
     },
     aFriends: [
       {
-        _id: mongoose.Types.ObjectId,
         sUsername: String,
       },
     ],
@@ -30,15 +29,15 @@ const userSchema = mongoose.Schema(
     ],
     aMoviesWatched: [
       {
-        _id: mongoose.Types.ObjectId,
-        nRating: Number,
+        nMovieId: String,
+        nRating: String,
         sComment: String,
       },
     ],
     aWatchList: [
       {
-        _id: mongoose.Types.ObjectId,
-        nRating: Number,
+        nMovieId: String,
+        nRating: String,
         sComment: String,
       },
     ],
