@@ -23,15 +23,15 @@
 
 .content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 48%;
   transform: translate(-50%, -50%);
   border: 2px solid var(--red);
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   width: 350px;
   opacity: 1;
-  animation: show 2s;
+  animation: show 4s;
 }
 
 .hidden-container {
